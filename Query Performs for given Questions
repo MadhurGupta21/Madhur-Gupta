@@ -1,0 +1,32 @@
+Question No - 1
+SELECT 
+    COUNT(*)
+FROM
+   salespeople
+WHERE Sname LIKE 'a%'
+OR Sname LIKE 'A%';
+
+Question No - 2
+SELECT COUNT(*) 
+FROM salespeople INNER JOIN orders on salespeople.Snum = orders.Snum WHERE Amt > 2000;
+
+Question No - 3
+SELECT 
+    COUNT(*)
+FROM
+   salespeople
+WHERE city = 'NewYork';
+
+Question No - 4
+SELECT *
+FROM salespeople
+WHERE City =
+(SELECT Sname 
+     FROM salespeople 
+     WHERE city= 'London' AND 'Paris');
+
+Question No - 5
+SELECT salespeople.Sname, 
+orders.Odate 
+FROM salespeople 
+INNER JOIN orders ON salespeople.Snum = orders.Snum;
